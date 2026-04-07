@@ -19,10 +19,25 @@ package fi.viikko2.task05;
 public class HourlyEmployee extends Employee {
     // TODO: private double hourlyRate; private double hoursPerMonth;
     // TODO: public HourlyEmployee(String name, double hourlyRate, double hoursPerMonth){ super(name); ... }
+    private double hourlyRate;
+    private double hoursPerMonth;
+
+    public HourlyEmployee(String name, double hourlyRate, double hoursPerMonth) {
+        super(name);
+        this.hourlyRate = hourlyRate;
+        this.hoursPerMonth = hoursPerMonth;
+    }
+
 
     @Override
-    public double monthlyPay(){ throw new UnsupportedOperationException("TODO: implement monthlyPay()"); }
+    public double monthlyPay(){
+        // throw new UnsupportedOperationException("TODO: implement monthlyPay()"); 
+        return hourlyRate * hoursPerMonth;
+    }
 
     @Override
-    public String toString(){ throw new UnsupportedOperationException("TODO: implement toString()"); }
+    public String toString(){ 
+        // throw new UnsupportedOperationException("TODO: implement toString()"); 
+        return String.format("HourlyEmployee{name='%s', hourlyRate=%.2f, hoursPerMonth=%.2f}", name, hourlyRate, hoursPerMonth);
+    }
 }

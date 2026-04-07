@@ -17,20 +17,36 @@
 package fi.viikko2.task04;
 
 public class Rectangle extends Shape {
+    private double width;
+    private double height;
+    public Rectangle(double width,double height){
+        this.width=width;
+        this.height=height;
+    }
 
 
     @Override
     public double area(){ 
         //  Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
-        throw new UnsupportedOperationException("TODO: implement area()"); }
+        //throw new UnsupportedOperationException("TODO: implement area()"); 
+        return width*height; 
+    }
 
     @Override
     public String toString(){ 
         //  Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
-        throw new UnsupportedOperationException("TODO: implement toString()"); }
+        //throw new UnsupportedOperationException("TODO: implement toString()"); 
+        return "Rectangle{width="+width+",height= "+height+",area="+area()+"}";
+    }
 
     @Override
     public boolean equals(Object o){ 
         //  Toteuta ja palauta merkkijono. Kun olet valmis, POISTA alla oleva rivi.
-        throw new UnsupportedOperationException("TODO: implement equals(Object)"); }
+        //throw new UnsupportedOperationException("TODO: implement equals(Object)"); 
+        if(this==o)return true;
+        if(o==null||getClass()!=o.getClass())
+            return false;
+        Rectangle rectangle=(Rectangle) o;
+        return Double.compare(rectangle.area(),this.area())==0;
+     }
 }
